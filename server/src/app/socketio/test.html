@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="messages"></ul>
+        <form id="fromID">
+            <input id="messageInput" type="text" value="" />
+            <button>Send</button>
+        </form>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const $ = document.querySelector.bind(document);
+            const socket = io();
+            const chatFrom = $("#fromID");
+            const chatMes = $("#messageInput");
+            const chatList = $('#messages');
+
+            chatFrom.addEventListener("submit", function (e) {
+                e.preventDefault();
+                socket.emit("chat-message", {
+                    msg: chatMes.value,
+                });
+                chatMes.value = '';
+            });
+            socket.on('user-message', ({msg}) => {
+                const chatLi = document.createElement('li');
+                chatLi.textContent = msg;
+                chatList.appendChild(chatLi);
+            })
+        </script>
+    </body>
+</html>

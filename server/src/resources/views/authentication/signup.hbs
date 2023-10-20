@@ -1,11 +1,11 @@
-<form class="mt-4" action="">
+<form method="POST" class="mt-4" action="">
     <div class="form-group">
         <label for="username">username</label>
         <input type="text" class="username" name="userName" placeholder="user name" />
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" value="" name='id="password"' placeholder="Password" />
+        <input type="password" value="" name="passWord" id="password" placeholder="Password" />
     </div>
     <div class="form-group">
         <label for="comfirm-password">comfirm password</label>
@@ -31,30 +31,22 @@
         <label for="address">địa chỉ</label>
         <input type="text" name="address" class="form-control" id="address" placeholder="Password" />
     </div>
+    <div class="form-group">
+        <label for="address">email</label>
+        <input type="text" name="email" class="form-control" id="email" placeholder="Password" />
+    </div>
+    <div class="form-group">
+        <label for="address">chuyên ngành</label>
+        <input type="text" name="chuyenNganh" class="form-control" id="address" placeholder="Password" />
+    </div>
+    <div class="form-group">
+        <label for="address">role</label>
+        <input type="text" name="role" class="form-control" id="address" placeholder="Password" />
+    </div>
+    <div class="form-group">
+        <label for="address">avatar</label>
+        <input type="text" name="avatar" class="form-control" id="address" placeholder="Password" />
+    </div>
 
     <button class="btn btn-primary">Submit</button>
 </form>
-
-<script>
-    const $ = document.querySelector.bind(document);
-    const $$ = document.querySelectorAll.bind(document);
-
-    (function(){
-        const submit = $('.btn');
-        submit.addEventListener('click',function(e) {
-            e.preventDefault();
-        })
-        const password = $('#password');
-        const comfirmPassword = $('#comfirm-password');
-        const user = (username,password,name,DateOfBirth,gender,address) => ({
-            username,password,name,DateOfBirth,gender,add
-        });
-        if(password && comfirmPassword && password === comfirmPassword) {
-            submit.removeEventListener('click',function(e) {
-                e.submit();
-            })
-        }
-    })();
-
-
-</script>

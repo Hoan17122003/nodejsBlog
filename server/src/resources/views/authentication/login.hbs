@@ -1,4 +1,4 @@
-<form method="get" name="login" action="/login/checklogin">
+<form method="post" action="/authentication/checklogin">
 
     <div class="form-account">
         <label for="username">username</label>
@@ -11,27 +11,3 @@
     <button type="submit">submit</button>
 </form>
 
-<script>
-
-    const $ = document.querySelector.bind(document);
-    const $$ = document.querySelectorAll.bind(document);
-    (function() {
-        const button = $('button');
-        const handleClick = function(e) {
-            e.preventDefault();
-        }
-        button.addEventListenr('click',handleClick)
-        const username = $('#username');
-        const password = $('#password');
-        if(username.value.length() != 0 && password.value.length() != 0) {
-            const form = document.form['login'];
-            button.removeEventListenr('click',handleClick);
-            button.onclick = function(e) {
-                form.submit();
-
-            }
-        }
-        
-    })()
-
-</script>

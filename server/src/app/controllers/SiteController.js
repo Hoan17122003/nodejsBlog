@@ -1,18 +1,13 @@
-const user = require('../models/user');
+const User = require('../models/user');
 
 class SiteController {
 
     //[GET]:/
     home(req,res,next) {
-        console.log(req.session.user);
-        res.render('home')
-    }
-    //[GET]: /
-    loginHome(req,res,next) {
         if(req.session.user) {
-            res.json({result:req.session.user})
+            next();
         }
-        res.status(401).json({message:'dont request home page'})
+        res.render('home')
     }
 }
 

@@ -1,0 +1,49 @@
+Blog 
+
+property: 
+    - Page:
+        + title  
+        + heading
+        + context
+        + thời gian đăng
+        + hình ảnh minh họa
+    - user  
+        + avatar
+        + Name
+        + gender
+        + email
+        + role
+        + level
+        + chuyên ngành 
+     
+
+
+- Model : 
+    - user
+    - Content
+
+methods : 
+    - Authentication : login/signup
+    - phân trang
+    - searching
+    - comment - react emontion
+    - feedback
+    - edit profile
+    - edit Page
+    - up Content
+    - remove Content
+
+
+done:
+    Authentication: - login/signup 
+
+    
+
+
+----- lỗi bảo mật ngày 16/10/2023 
+bug 1 : 
+    - mô tả : 
+        + khi route đang ở news, nếu ta chỉnh sửa lại domain sang route home thì nó sẽ chuyển hướng sang trang home và không xóa token đi
+- bug 2 : 
+    - mô tả : 
+        
